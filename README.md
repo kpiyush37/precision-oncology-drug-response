@@ -19,15 +19,15 @@ A research-oriented machine learning project for predicting cancer cell line sen
 ## Models
 
 ### Baseline
-- **XGBoost** — gradient boosted trees for tabular genomic features
+- **XGBoost** — gradient boosted trees on tabular genomic features
 
 ### Deep Learning
-- **MLP** (Multi-Layer Perceptron) — feedforward network on expression + mutation features
-- **GNN Drug Encoder** — graph neural network over drug molecular graphs (CANDELA-style), encodes SMILES strings into learned drug embeddings; combined with cell line features for final prediction
+- **MLP** (Multi-Layer Perceptron) — feedforward network on expression and mutation features
+- **GNN Drug Encoder** — graph neural network over drug molecular graphs (CANDELA-style); encodes SMILES strings into learned drug embeddings, combined with cell line features for joint prediction
 
 ### Explainability
-- **SHAP** — feature importance for XGBoost and MLP models
-- **Integrated Gradients** — attribution scores for MLP inputs to identify predictive genomic features
+- **SHAP** — feature importance for XGBoost and MLP
+- **Integrated Gradients** — attribution scores for MLP inputs to surface predictive genomic features
 
 ## Tech Stack
 
@@ -36,30 +36,3 @@ A research-oriented machine learning project for predicting cancer cell line sen
 - `captum` — Integrated Gradients
 - `shap` — SHAP explainability
 - Google Colab (GPU runtime)
-
-## Project Structure
-├── data/ # GDSC2 expression, mutation, drug data
-├── models/
-│ ├── xgboost_baseline.py
-│ ├── mlp_model.py
-│ └── gnn_drug_encoder.py
-├── explainability/
-│ ├── shap_analysis.py
-│ └── integrated_gradients.py
-├── notebooks/ # Colab notebooks for training and analysis
-└── outputs/ # Saved models, plots, results
-
-
-## Results
-
-| Model | RMSE | R² |
-|-------|------|----|
-| XGBoost | — | — |
-| MLP | — | — |
-| MLP + GNN Drug Encoder | — | — |
-
-*Results to be updated after full training runs.*
-
-## Usage
-
-Open the notebooks in Google Colab with GPU runtime enabled. Ensure internet access is on for dataset and dependency downloads.
